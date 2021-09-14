@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  tasks:
+    - name: fix realtek wifi does npt shoe problem
+      ignore_errors: True
+      shell: |
+        git clone https://github.com/lwfinger/rtw89.git
+        cd rtw89
+        make
+        sudo make install
+        sudo mkdir /usr/lib/firmware/rtw89
+        sudo cp  rtw8852a_fw.bin  /usr/lib/firmware/rtw89/
+        sudo modprobe rtw89pci
+        cd ..
+        rm -r rtw89
+      args:
+        warn: no
+

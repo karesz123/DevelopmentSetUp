@@ -2,6 +2,9 @@
 - name: common packages
   import_playbook: installCommonPackages.yml
 
+- name: realtek fix
+  import_playbook: realtekWIFIFix.yml
+
 - name: java
   import_playbook: installJava.yml
 
