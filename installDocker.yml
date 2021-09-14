@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install docker
+      ignore_errors: True
+      become: yes
+      snap:
+        name: docker
+        state: present
+    - name: install docker compose          
+      ignore_errors: True
+      become: yes
+      apt:
+        name: docker          
+        state: latest
+        update_cache: yes
+        cache_valid_time: 3600
+

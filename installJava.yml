@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Update APT package manager repositories cache
+      ignore_errors: True
+      become: true
+      apt:
+        update_cache: yes
+    - name: Install Java using Ansible
+      ignore_errors: True
+      become: yes
+      apt:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+           - openjdk-11-jdk
+    - name: "Fetch JAVA_HOME"
+      shell: dirname $(dirname $(readlink -f $(which javac)))
+      register: java_home
+    - name: Set JAVA_HOME
+      lineinfile:
+        dest: /etc/environment
+        state: present
+        regexp: '^JAVA_HOME'
+        line: 'JAVA_HOME={{java_home.stdout}}'

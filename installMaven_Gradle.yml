@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install maven and gradle
+      ignore_errors: True
+      become: yes
+      apt: 
+        name: "{{ packages }}"
+        state: latest 
+        update_cache: yes 
+        cache_valid_time: 3600
+      vars:
+        packages:
+            - maven
+            - gradle

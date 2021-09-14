@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install common packages
+      ignore_errors: True
+      become: yes
+      apt:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: yes
+        cache_valid_time: 3600
+      vars:
+        packages:
+            - apt-transport-https    
+            - git
+            - htop
+            - curl
+            - wget
+            - vim
+    - name: install the touche gestures app
+      ignore_errors: True
+      become: yes
+      flatpak:
+        name: com.github.joseexposito.touche
+    - name: install notion
+      ignore_errors: True
+      become: yes
+      snap:
+        name: notion-snap    

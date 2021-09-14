@@ -1,0 +1,24 @@
+---
+- name: common packages
+  import_playbook: installCommonPackages.yml
+
+- name: java
+  import_playbook: installJava.yml
+
+- name: maven and gradle
+  import_playbook: installMaven_Gradle.yml
+
+- name: .NET
+  import_playbook: installNET.yml
+
+- name: nodejs and npm
+  import_playbook: installNodeNpm.yml
+
+- name: code editor
+  import_playbook: installCodeEditors.yml
+
+- name: docker
+  import_playbook: installDocker.yml
+
+- name: cloud
+  import_playbook: installCloud.yml

@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install kubernetes ctl
+      ignore_errors: True
+      become: yes
+      snap:
+        name: kubectl
+        classic: yes
+    - name: install azure cli
+      ignore_errors: True
+      shell: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      args:
+        warn: no
+    - name: install azure storage explorer
+      snap:
+        name: storage-explorer    

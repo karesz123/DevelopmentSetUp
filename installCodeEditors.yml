@@ -1,0 +1,21 @@
+- hosts: localhost
+  tasks:
+    - name: install intellij ultimate
+      ignore_errors: True
+      become: yes
+      snap:
+        name: intellij-idea-ultimate
+        classic: yes
+    - name: install rider
+      ignore_errors: True
+      become: yes
+      snap:
+        name: rider
+        classic: yes
+    - name: install visual studio code
+      ignore_errors: True
+      become: yes
+      snap:
+        name: code
+        classic: yes
+
