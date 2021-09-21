@@ -18,5 +18,6 @@ This project is about to set up development enviroment with ansible on Ubuntu-ba
 	```
 2. **Run the main playbook**
         ```bash
+
         ansible-playbook main.yml
         ```
