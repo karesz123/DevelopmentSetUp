@@ -19,6 +19,6 @@ In addition, to solve the wifi not not detected problem for wireless device `Rea
 	cd DevelopmentSetUp
 	```
 2. **Run the main playbook**
-        ```bash
+	```bash
 	ansible-playbook main.yml
 	```
