@@ -1,27 +1,27 @@
 ---
 - name: common packagei
-  import_playbook: tasks/installCommonPackages.yml
+  import_playbook: tasks/commonPackages.yml
 
 - name: realtek fix
   import_playbook: tasks/realtekWIFIFix.yml
 
 - name: java
-  import_playbook: tasks/installJava.yml
+  import_playbook: tasks/java.yml
 
 - name: maven and gradle
-  import_playbook: tasks/installMaven_Gradle.yml
+  import_playbook: tasks/maven_gradle.yml
 
 - name: .NET
-  import_playbook: tasks/installNET.yml
+  import_playbook: tasks/net.yml
 
 - name: nodejs and npm
-  import_playbook: tasks/installNodeNpm.yml
+  import_playbook: tasks/node_npm.yml
 
 - name: code editor
-  import_playbook: tasks/installCodeEditors.yml
+  import_playbook: tasks/codeEditors.yml
 
 - name: docker
-  import_playbook: tasks/installDocker.yml
+  import_playbook: tasks/docker.yml
 
 - name: cloud
-  import_playbook: tasks/installCloud.yml
+  import_playbook: tasks/cloud.yml
