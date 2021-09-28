@@ -17,6 +17,8 @@
             - curl
             - wget
             - vim
+            - gcc
+            - make
     - name: install the touche gestures app
       ignore_errors: True
       become: yes
